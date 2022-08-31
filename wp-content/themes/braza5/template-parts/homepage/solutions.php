@@ -2,11 +2,12 @@
       <div class="container">
         <div class="row d-flex justify-content-center">
           <div class="col-md-12" data-aos="fade-up" data-aos-once="false" data-aos-easing="ease-in-out" data-aos-offset="100" data-aos-delay="10" data-aos-duration="1000">
-            <h2>SOLUÇÕES</h2>
+            <h2>Easy Chopp</h2>
+            <p class="sub">Aqui contamos com o sistema Easy Chopp que funciona junto da sua<br>comanda! Escolha seu chopp, aproxime a comanda e sirva-se a vontade</p>
           </div>
 
           <?php 
-          $posts = get_posts(array('posts_per_page'	=> -1,'post_type'			=> 'solucoes','order' => 'ASC'));
+          $posts = get_posts(array('posts_per_page'	=> -1,'post_type'			=> 'easy-chopp','order' => 'ASC'));
           if( $posts ): ?>
 
           

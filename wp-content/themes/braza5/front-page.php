@@ -12,6 +12,13 @@
     ?>
 
     <?php
+        $show_carousel_section = get_field('show_carousel_section', $theme_options_code);
+        if($show_carousel_section == true){ 
+            get_template_part('template-parts/homepage/carousel');
+        }
+    ?>
+
+    <?php
         $show_video = get_field('show_video', $theme_options_code);
         if($show_video == true){ 
             get_template_part('template-parts/homepage/video');
@@ -19,15 +26,11 @@
     ?>
 
     <?php
-        $show_slimbanner_section = get_field('show_slimbanner_section', $theme_options_code);
-        if($show_slimbanner_section == true){ 
-            get_template_part('template-parts/homepage/slim-banner');
+        $show_menu_section = get_field('show_menu_section', $theme_options_code);
+        if($show_menu_section == true){ 
+            get_template_part('template-parts/homepage/menu');
         }
     ?>
-
-    <?php //get_template_part('template-parts/homepage/mvv'); ?>
-
-    <?php //get_template_part('template-parts/homepage/specialties'); ?>
 
     <?php
         $show_services_section = get_field('show_services_section', $theme_options_code);
@@ -44,13 +47,6 @@
     ?>
 
     <?php
-        $show_partners = get_field('show_partners', $theme_options_code);
-        if($show_partners == true){ 
-            get_template_part('template-parts/homepage/partners');
-        }
-    ?>
-
-    <?php
         $show_regulations = get_field('show_regulations', $theme_options_code);
         if($show_regulations == true){ 
             get_template_part('template-parts/homepage/regulations');
@@ -58,7 +54,7 @@
     ?>
 
     <?php 
-        $show_blog = get_field('show_blog');
+        $show_blog = get_field('show_blog', $theme_options_code);
         if($show_blog == true){ 
         get_template_part('template-parts/homepage/blog');
         }

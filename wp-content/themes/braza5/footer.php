@@ -102,15 +102,6 @@ if($phone == ""){
 function VerEmail(){ 
 $("#VerEmail").text('<?php echo $informations_footer['email_informations_footer']; ?>'); 
 }
-
-// Change logo on scroll
-$(window).scroll(function (event) {
-  if ($(window).scrollTop() <= 60) {
-    $("#brand-img").attr("src", "<?php bloginfo('template_url'); ?>/assets/imgs/logo.png");
-  } else {
-    $("#brand-img").attr("src", "<?php bloginfo('template_url'); ?>/assets/imgs/logo-white.png");
-  }
-});
 </script>
 </body>
 </html>

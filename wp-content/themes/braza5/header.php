@@ -52,25 +52,24 @@
   <?php } ?>
   <?php if ( !is_home() && is_front_page() ) { ?>
     <nav class="navbar fixed-top navbar-expand-lg">
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav" aria-controls="navbarSupportedContent"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-
       <div class="navbar-collapse collapse dual-nav order-2 order-md-1 justify-content-end">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Center Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Center Link</a>
-          </li>
-        </ul>
+        <?php
+          wp_nav_menu( array(
+            'menu'              => 'menu-principal-esq',
+            'theme_location'    => 'menu-principal-esq',
+            'depth'             => 2,
+            'container'         => 'ul',
+            'menu_class'        => 'navbar-nav',
+            'fallback_cb'       => 'wp_page_menu'
+          ) );
+        ?>
       </div>
-
       <a class="navbar-brand mx-auto order-0 order-md-2" href="<?php echo get_home_url(); ?>">
         <?php 
           $custom_logo_id = get_theme_mod( 'custom_logo' );
@@ -78,137 +77,99 @@
         ?>
         <img id="brand-img" src="<?php echo $image[0]; ?>" width="150" alt="<?php echo get_bloginfo( 'name' ) . ' - '. get_bloginfo( 'description' ); ?>" alt="<?php echo get_bloginfo( 'name' ) . ' - '. get_bloginfo( 'description' ); ?>">
       </a>
-
       <div class="navbar-collapse collapse dual-nav order-3 order-md-3">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Center Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Center Link</a>
-          </li>
-        </ul>
+        <?php
+          wp_nav_menu( array(
+            'menu'              => 'menu-principal-dir',
+            'theme_location'    => 'menu-principal-dir',
+            'depth'             => 2,
+            'container'         => 'ul',
+            'menu_class'        => 'navbar-nav',
+            'fallback_cb'       => 'wp_page_menu'
+          ) );
+        ?>
       </div>
-
     </nav>
 <?php } ?>
 <?php if ( is_blog() || is_category() || is_search() || is_page() && !is_home() && !is_front_page() ) { ?>
     <nav class="navbar fixed-top navbar-expand-lg">
-      <div class="container">
-        <a class="navbar-brand order-md-last" href="<?php echo get_home_url(); ?>">
-          <img id="brand-img" src="<?php bloginfo('template_url'); ?>/assets/imgs/logo.png" width="150" alt="<?php echo get_bloginfo( 'name' ) . ' - '. get_bloginfo( 'description' ); ?>">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-          aria-expanded="false" aria-label="Toggle navigation">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <?php
-            wp_nav_menu( array(
-              'menu'              => 'menu-paginas',
-              'theme_location'    => 'menu-paginas',
-              'depth'             => 2,
-              'container'         => 'ul',
-              'menu_class'        => 'navbar-nav',
-              'fallback_cb'       => 'wp_page_menu'
-            ) );
-          ?>
-          <?php 
-          $social_media_menu = get_field('social_media_menu', $theme_options_code);
-          $social_media_choose_menu = get_field('social_media_choose_menu', $theme_options_code);
-          if($social_media_menu == true){ 
-          ?>
-          <div class="social-part">
-            <?php if($social_media_choose_menu && in_array('Facebook', $social_media_choose_menu)) { ?>
-            <a href="<?php the_field('link_facebook', $theme_options_code); ?>" target="_blank">
-              <i class="fa fa-facebook" aria-hidden="true"></i>
-            </a>
-            <?php } ?>
-            <?php if($social_media_choose_menu && in_array('Instagram', $social_media_choose_menu)) { ?>
-            <a href="<?php the_field('link_instagram', $theme_options_code); ?>" target="_blank">
-              <i class="fa fa-instagram" aria-hidden="true"></i>
-            </a>
-            <?php } ?>
-            <?php if($social_media_choose_menu && in_array('Youtube', $social_media_choose_menu)) { ?>
-              <a href="<?php the_field('link_youtube', $theme_options_code); ?>" target="_blank">
-                <i class="fa fa-youtube"></i>
-              </a>
-            <?php } ?>
-            <?php if($social_media_choose_menu && in_array('Twitter', $social_media_choose_menu)) { ?>
-              <a href="<?php the_field('link_twitter', $theme_options_code); ?>" target="_blank">
-                <i class="fa fa-twitter"></i>
-              </a>
-            <?php } ?>
-            <?php if($social_media_choose_menu && in_array('Linkedin', $social_media_choose_menu)) { ?>
-              <a href="<?php the_field('link_linkedin', $theme_options_code); ?>" target="_blank">
-                <i class="fa fa-linkedin"></i>
-              </a>
-            <?php } ?>
-          </div>
-          <?php } ?>
-        </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="navbar-collapse collapse dual-nav order-2 order-md-1 justify-content-end">
+        <?php
+          wp_nav_menu( array(
+            'menu'              => 'menu-principal-esq',
+            'theme_location'    => 'menu-principal-esq',
+            'depth'             => 2,
+            'container'         => 'ul',
+            'menu_class'        => 'navbar-nav',
+            'fallback_cb'       => 'wp_page_menu'
+          ) );
+        ?>
+      </div>
+      <a class="navbar-brand mx-auto order-0 order-md-2" href="<?php echo get_home_url(); ?>">
+        <?php 
+          $custom_logo_id = get_theme_mod( 'custom_logo' );
+          $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+        ?>
+        <img id="brand-img" src="<?php echo $image[0]; ?>" width="150" alt="<?php echo get_bloginfo( 'name' ) . ' - '. get_bloginfo( 'description' ); ?>" alt="<?php echo get_bloginfo( 'name' ) . ' - '. get_bloginfo( 'description' ); ?>">
+      </a>
+      <div class="navbar-collapse collapse dual-nav order-3 order-md-3">
+        <?php
+          wp_nav_menu( array(
+            'menu'              => 'menu-principal-dir',
+            'theme_location'    => 'menu-principal-dir',
+            'depth'             => 2,
+            'container'         => 'ul',
+            'menu_class'        => 'navbar-nav',
+            'fallback_cb'       => 'wp_page_menu'
+          ) );
+        ?>
       </div>
     </nav>
 <?php } ?>
 <?php if ( is_home() && !is_front_page() ) { ?>
     <nav class="navbar fixed-top navbar-expand-lg">
-      <div class="container">
-        <a class="navbar-brand order-md-last" href="<?php echo get_home_url(); ?>">
-          <img id="brand-img" src="<?php bloginfo('template_url'); ?>/assets/imgs/logo.png" width="150" alt="<?php echo get_bloginfo( 'name' ) . ' - '. get_bloginfo( 'description' ); ?>">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-          aria-expanded="false" aria-label="Toggle navigation">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <?php
-            wp_nav_menu( array(
-              'menu'              => 'menu-paginas',
-              'theme_location'    => 'menu-paginas',
-              'depth'             => 2,
-              'container'         => 'ul',
-              'menu_class'        => 'navbar-nav',
-              'fallback_cb'       => 'wp_page_menu'
-            ) );
-          ?>
-          <?php 
-          $social_media_menu = get_field('social_media_menu', $theme_options_code);
-          $social_media_choose_menu = get_field('social_media_choose_menu', $theme_options_code);
-          if($social_media_menu == true){ 
-          ?>
-          <div class="social-part">
-            <?php if($social_media_choose_menu && in_array('Facebook', $social_media_choose_menu)) { ?>
-            <a href="<?php the_field('link_facebook', $theme_options_code); ?>" target="_blank">
-              <i class="fa fa-facebook" aria-hidden="true"></i>
-            </a>
-            <?php } ?>
-            <?php if($social_media_choose_menu && in_array('Instagram', $social_media_choose_menu)) { ?>
-            <a href="<?php the_field('link_instagram', $theme_options_code); ?>" target="_blank">
-              <i class="fa fa-instagram" aria-hidden="true"></i>
-            </a>
-            <?php } ?>
-            <?php if($social_media_choose_menu && in_array('Youtube', $social_media_choose_menu)) { ?>
-              <a href="<?php the_field('link_youtube', $theme_options_code); ?>" target="_blank">
-                <i class="fa fa-youtube"></i>
-              </a>
-            <?php } ?>
-            <?php if($social_media_choose_menu && in_array('Twitter', $social_media_choose_menu)) { ?>
-              <a href="<?php the_field('link_twitter', $theme_options_code); ?>" target="_blank">
-                <i class="fa fa-twitter"></i>
-              </a>
-            <?php } ?>
-            <?php if($social_media_choose_menu && in_array('Linkedin', $social_media_choose_menu)) { ?>
-              <a href="<?php the_field('link_linkedin', $theme_options_code); ?>" target="_blank">
-                <i class="fa fa-linkedin"></i>
-              </a>
-            <?php } ?>
-          </div>
-          <?php } ?>
-        </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="navbar-collapse collapse dual-nav order-2 order-md-1 justify-content-end">
+        <?php
+          wp_nav_menu( array(
+            'menu'              => 'menu-principal-esq',
+            'theme_location'    => 'menu-principal-esq',
+            'depth'             => 2,
+            'container'         => 'ul',
+            'menu_class'        => 'navbar-nav',
+            'fallback_cb'       => 'wp_page_menu'
+          ) );
+        ?>
+      </div>
+      <a class="navbar-brand mx-auto order-0 order-md-2" href="<?php echo get_home_url(); ?>">
+        <?php 
+          $custom_logo_id = get_theme_mod( 'custom_logo' );
+          $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+        ?>
+        <img id="brand-img" src="<?php echo $image[0]; ?>" width="150" alt="<?php echo get_bloginfo( 'name' ) . ' - '. get_bloginfo( 'description' ); ?>" alt="<?php echo get_bloginfo( 'name' ) . ' - '. get_bloginfo( 'description' ); ?>">
+      </a>
+      <div class="navbar-collapse collapse dual-nav order-3 order-md-3">
+        <?php
+          wp_nav_menu( array(
+            'menu'              => 'menu-principal-dir',
+            'theme_location'    => 'menu-principal-dir',
+            'depth'             => 2,
+            'container'         => 'ul',
+            'menu_class'        => 'navbar-nav',
+            'fallback_cb'       => 'wp_page_menu'
+          ) );
+        ?>
       </div>
     </nav>
 <?php } ?>

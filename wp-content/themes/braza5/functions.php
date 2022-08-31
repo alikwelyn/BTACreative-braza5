@@ -41,7 +41,8 @@ add_action( 'wp_head', 'btax1_render_title' );
 * Menus
 */
 register_nav_menus( array(
-    'menu-principal'  => __( 'Menu Principal', 'ab' ),
+    'menu-principal-esq'  => __( 'Menu Principal Esquerda', 'ab' ),
+    'menu-principal-dir'  => __( 'Menu Principal Direita', 'ab' ),
     'menu-paginas'    => __( 'Menu Páginas', 'ab' )
 ));
 
