@@ -1,9 +1,9 @@
 <?php $theme_options_code = 435; $informations_footer = get_field('informations_footer', $theme_options_code); ?>
-<footer>
+<footer id="footer">
   <div class="container">
     <div class="row d-flex align-items-center justify-content-center h-100" data-aos="fade-up" data-aos-once="false" data-aos-easing="ease-in-out" data-aos-offset="100" data-aos-delay="10" data-aos-duration="1000">
       <div class="col-md-8 mx-auto">
-        <img src="<?php bloginfo('template_url'); ?>/assets/imgs/logo.png" width="150" alt="<?php echo get_bloginfo( 'name' ) . ' - '. get_bloginfo( 'description' ); ?>">
+        <img src="<?php bloginfo('template_url'); ?>/assets/imgs/logo-other.png" width="150" alt="<?php echo get_bloginfo( 'name' ) . ' - '. get_bloginfo( 'description' ); ?>">
         <ul class="styled-icons icon-theme-colored list-inline">
         <?php
         $social_media_footer = get_field('social_media_footer', $theme_options_code);
@@ -31,10 +31,10 @@
       <div class="col-md-8 mx-auto">
         <div class="row">
           <div class="col-md-6">
-            <div class="btn btn_blue" id="VerTelefone" onclick="VerTelefone()">VER TELEFONE</div>
+            <div class="btn btn_default" id="VerTelefone" onclick="VerTelefone()">VER TELEFONE</div>
           </div>
           <div class="col-md-6">
-            <div class="btn btn_blue" id="VerEmail" onclick="VerEmail()">VER EMAIL</div>
+            <div class="btn btn_default" id="VerEmail" onclick="VerEmail()">VER EMAIL</div>
           </div>
           <div class="col-md-12">
             <p class="end">
@@ -51,7 +51,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-xs-12 col-md-4 logo-client">
-          <img src="<?php bloginfo('template_url'); ?>/assets/imgs/logo-white.png" width="125" alt="<?php echo get_bloginfo( 'name' ) . ' - '. get_bloginfo( 'description' ); ?>">
+          <img src="<?php bloginfo('template_url'); ?>/assets/imgs/logo-other.png" width="125" alt="<?php echo get_bloginfo( 'name' ) . ' - '. get_bloginfo( 'description' ); ?>">
         </div>
         <div class="col-xs-12 col-md-4 cnpj">
         </div>
@@ -101,6 +101,20 @@ if($phone == ""){
 // Email button
 function VerEmail(){ 
 $("#VerEmail").text('<?php echo $informations_footer['email_informations_footer']; ?>'); 
+}
+
+//Video Banner Mute/Unmute Controller
+document.getElementById("playPauseBtn").
+addEventListener("click", function (){
+  $('video').prop('muted', !$('video').prop('muted'))
+});
+var image =  document.getElementById("imageOne");
+function changeColor() {
+  if (image.getAttribute('src') == "<?php bloginfo('template_url'); ?>/assets/imgs/mute.png"){
+    image.src = "<?php bloginfo('template_url'); ?>/assets/imgs/unmute.png";
+  } else {
+    image.src = "<?php bloginfo('template_url'); ?>/assets/imgs/mute.png";
+  }
 }
 </script>
 </body>

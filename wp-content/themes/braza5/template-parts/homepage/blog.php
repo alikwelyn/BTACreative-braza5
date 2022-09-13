@@ -28,11 +28,11 @@
             var current_page = <?php echo (get_query_var('paged')) ? get_query_var('paged') : 1; ?>;
             var max_pages = '<?php echo $wp_query->max_num_pages; ?>';
           </script>
-          <div id="load-more" class="btn btn_blue" style="text-align:center;">carregar mais postagens</div>
+          <div id="load-more" class="btn btn_default" style="text-align:center;">carregar mais postagens</div>
           <?php endif; ?>
           
           <div class="col-md-12 text-center">
-            <a href="blog" class="btn btn_blue">ver matérias anteriores</a>
+            <a href="blog" class="btn btn_default">ver matérias anteriores</a>
           </div>
         </div>
 

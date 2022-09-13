@@ -12,16 +12,16 @@
     ?>
 
     <?php
-        $show_carousel_section = get_field('show_carousel_section', $theme_options_code);
-        if($show_carousel_section == true){ 
-            get_template_part('template-parts/homepage/carousel');
+        $show_video = get_field('show_video', $theme_options_code);
+        if($show_video == true){ 
+            get_template_part('template-parts/homepage/video');
         }
     ?>
 
     <?php
-        $show_video = get_field('show_video', $theme_options_code);
-        if($show_video == true){ 
-            get_template_part('template-parts/homepage/video');
+        $show_carousel_section = get_field('show_carousel_section', $theme_options_code);
+        if($show_carousel_section == true){ 
+            get_template_part('template-parts/homepage/carousel');
         }
     ?>
 
@@ -35,21 +35,14 @@
     <?php
         $show_services_section = get_field('show_services_section', $theme_options_code);
         if($show_services_section == true){ 
-            get_template_part('template-parts/homepage/solutions');
+            get_template_part('template-parts/homepage/easy-chopp');
         }
     ?>
 
     <?php
-        $show_expertise_areas_section = get_field('show_expertise_areas_section', $theme_options_code);
-        if($show_expertise_areas_section == true){ 
-            get_template_part('template-parts/homepage/expertise-areas');
-        }
-    ?>
-
-    <?php
-        $show_regulations = get_field('show_regulations', $theme_options_code);
-        if($show_regulations == true){ 
-            get_template_part('template-parts/homepage/regulations');
+        $show_instagram = get_field('show_instagram', $theme_options_code);
+        if($show_instagram == true){ 
+            get_template_part('template-parts/homepage/instagram');
         }
     ?>
 

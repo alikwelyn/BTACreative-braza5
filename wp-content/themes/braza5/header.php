@@ -25,7 +25,7 @@
     if($show_preloader == true){ 
   ?>
     <div class="preloader">
-      <img class="preloader-logo" src="<?php bloginfo('template_url'); ?>/assets/imgs/logo-white.png" width="200" alt="<?php echo get_bloginfo( 'name' ) . ' - '. get_bloginfo( 'description' ); ?>">
+      <img class="preloader-logo" src="<?php bloginfo('template_url'); ?>/assets/imgs/logo.png" width="200" alt="<?php echo get_bloginfo( 'name' ) . ' - '. get_bloginfo( 'description' ); ?>">
       <div class="preloader-preview-area">
           <div class="ball-pulse">
               <div></div>
@@ -52,12 +52,6 @@
   <?php } ?>
   <?php if ( !is_home() && is_front_page() ) { ?>
     <nav class="navbar fixed-top navbar-expand-lg">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav" aria-controls="navbarSupportedContent"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
       <div class="navbar-collapse collapse dual-nav order-2 order-md-1 justify-content-end">
         <?php
           wp_nav_menu( array(
@@ -70,7 +64,7 @@
           ) );
         ?>
       </div>
-      <a class="navbar-brand mx-auto order-0 order-md-2" href="<?php echo get_home_url(); ?>">
+      <a class="navbar-brand order-0 order-md-2" href="<?php echo get_home_url(); ?>">
         <?php 
           $custom_logo_id = get_theme_mod( 'custom_logo' );
           $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
@@ -89,6 +83,12 @@
           ) );
         ?>
       </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
     </nav>
 <?php } ?>
 <?php if ( is_blog() || is_category() || is_search() || is_page() && !is_home() && !is_front_page() ) { ?>

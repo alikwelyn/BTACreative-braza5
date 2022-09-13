@@ -6,7 +6,7 @@
     height: 100%;
     width: 100%;
     text-align: center;
-    background: #060077;
+    background: #FCF1D1;
 }
 .preloader-logo,
 .preloader-preview-area {
@@ -36,7 +36,7 @@
 .line-scale > div {
     margin: 2px;
     display: inline-block;
-    background: #fff;
+    background: #000;
 }
 .ball-pulse > div {
     width: 15px;

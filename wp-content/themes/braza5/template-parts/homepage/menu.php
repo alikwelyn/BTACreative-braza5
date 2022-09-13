@@ -9,6 +9,7 @@
                     <div class="txt">
                         <h2>Cardápio</h2>
                         <p><?php the_sub_field('text_menu', $theme_options_code); ?></p>
+                        <a href="<?php the_sub_field('link_menu', $theme_options_code); ?>" class="btn btn_default">VER CARDÁPIO</a>
                     </div>
                 </div>
                 <div class="col-md-6 d-flex justify-content-center align-items-center">

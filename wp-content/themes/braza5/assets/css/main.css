@@ -165,6 +165,10 @@ nav ul li a:before {
 .navbar .navbar-brand{
   padding: 0 3em;
 }
+.navbar .navbar-brand{
+  margin-left: auto;
+  margin-right: auto;
+}
 .navbar-scroll {
 	padding: 1em 0;
 	box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
@@ -233,7 +237,7 @@ nav ul li a:before {
 	width: 22px;
 	display: block;
 	height: 2px;
-	background-color: #fff;
+	background-color: #000;
 	-webkit-transition: all 0.2s;
 	transition: all 0.2s;
 }
@@ -255,35 +259,64 @@ nav ul li a:before {
 	transform: rotate(0);
 }
 
-.carousel-item {
-  height: 100vh;
-  background-size: cover;
-  background-position: center center;
+header {
+  position: relative;
+  background-color: white;
+  height: 80vh;
+  width: 100%;
+  overflow: hidden;
 }
-.carousel-item h1 {
-  margin: 0;
-  color: white;
-  font-family: 'Bitter', serif;
-  font-weight: 700;
-  font-size: 94px;
+header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background-color: white;
 }
-.carousel-item .button{
-  position:absolute;
-  width:100%;
-  bottom:50px;
-  left:0;
-  right:0;
-  z-index: 10000001;
+header video#vid {
+  border: 25px solid #FCF1D1;
 }
-.carousel-item .button .btn_blue{
-  color: #060077;
-  background-color: #fff;
-  border-color: #fff;
+header .container {
+  position: relative;
+  z-index: 2;
+  background-color: white;
 }
-.carousel-item .button .btn_blue:hover{
-  color: #fff;
-  background-color: transparent;
-  border-color: #fff;
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+header .play-video{
+  margin-top: 100px
+}
+header .speaker {
+	height: 100px;
+	width: 100px;
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+  margin-bottom: -30px;
+  margin-left: 20px;
+}
+header .speaker span {
+	display: block;
+	width: 8px;
+	height: 8px;
+	background: #fff;
+	margin: 11px 0 0 2px;
 }
 
 #sobre {
@@ -436,7 +469,7 @@ nav ul li a:before {
   width: 100%;
 }
 #cardapio .txt{
-  padding: 0 0 0 0;
+  padding: 0;
   text-align: center;
 }
 #cardapio .txt h2{
@@ -455,12 +488,22 @@ nav ul li a:before {
 #cardapio .txt p strong{
   color: #fff;
 }
+#cardapio .btn_default{
+  color: #B18846;
+  background-color: #fff;
+  border: 2px solid #fff;
+}
+#cardapio .btn_default:hover{
+  color: #fff;
+  background-color: #B18846;
+  border: 2px solid #B18846;
+}
 
-#solucoes{
+#easychopp{
   background-image: url("../imgs/easy-chopp-bg.jpg");
   padding: 3em 0;
 }
-#solucoes h2{
+#easychopp h2{
   color: #B18846;
   font-size: 80px;
   font-family: 'Bitter', serif;
@@ -468,7 +511,7 @@ nav ul li a:before {
   text-align: center;
   padding-bottom: .2em;
 }
-#solucoes p.sub{
+#easychopp p.sub{
   color: #FFFFFF;
   font-size: 18px;
   font-family: 'Bitter', serif;
@@ -477,7 +520,7 @@ nav ul li a:before {
   text-align: center;
   padding-bottom: 3em;
 }
-#solucoes .card{
+#easychopp .card{
   background-color: transparent;
   display: grid;
   align-content: center;
@@ -486,14 +529,14 @@ nav ul li a:before {
   border-radius: 0;
   margin-bottom: 1em;
 }
-#solucoes .card-img-top{
+#easychopp .card-img-top{
   width: auto;
   height: auto;
 }
-#solucoes .card-body {
+#easychopp .card-body {
   padding: 0;
 }
-#solucoes .card-body h4{
+#easychopp .card-body h4{
   color: #B18846;
   font-size: 32px;
   font-family: 'Bitter', serif;
@@ -501,7 +544,7 @@ nav ul li a:before {
   padding: 1em 2em 0 2em;
   text-align: center;
 }
-#solucoes .card-body p{
+#easychopp .card-body p{
   color: #FFFFFF;
   font-size: 18px;
   font-family: 'Bitter', serif;
@@ -509,80 +552,40 @@ nav ul li a:before {
   line-height: 1;
   padding-top: .5em;
 }
-#solucoes .btn_blue{
+#easychopp .btn_default{
   margin-bottom: 2em;
 }
-
-#atuacao{
-  background-color: #606060;
-  padding: 4em 0;
-}
-#atuacao h2{
-  color: #FFFFFF;
-  font-size: 55px;
-  font-family: 'Bitter', serif;
-  font-weight: 700;
-  text-align: center;
-}
-#atuacao p{
-  color: #FFFFFF;
-  font-size: 16px;
-  font-family: 'Bitter', serif;
-  font-weight: 400;
-  text-align: center;
-  padding-bottom: 2em;
-}
-#atuacao .card{
-  background-color: transparent;
-  display: grid;
-  align-content: center;
-  border: 0;
-  border-radius: 0;
-}
-#atuacao .card .card-img-top{
-  width: auto;
-  height: auto;
-}
-#atuacao .card .card-body {
-  padding: 0;
-}
-#atuacao .card .card-body p{
-  color: #fff;
-  font-size: 16px;
-  font-family: 'Bitter', serif;
-  font-weight: 400;
-  line-height: 1;
-  text-align: left;
-}
-#atuacao .btn_blue{
-  margin-top: 1em;
-}
-#atuacao .btn_blue:hover{
-  color: #fff;
-  border-color: #fff;
-}
-
-#normas{
+#easychopp .btn_default:hover{
+  color: #000;
   background-color: #fff;
-  padding: 4em 0;
+  border: 2px solid #fff;
 }
-#normas h2{
-  color: #060077;
-  font-size: 55px;
+
+#instagram{
+  background-color: #fff;
+  padding: 4em 0 0;
+}
+#instagram h2{
+  color: #B18846;
+  font-size: 80px;
   font-family: 'Bitter', serif;
-  font-weight: 700;
+  font-weight: 800;
   text-align: center;
-  text-transform: uppercase;
+  padding-bottom: .2em;
 }
-#normas .card {
-  border: 0;
-}
-#normas .btn_blue{
+#instagram .btn_default{
   margin-top: 1em;
+  margin-bottom: 3em;
 }
-#normas .btn_blue:hover{
+#instagram .btn_default:hover{
   color: #fff;
   border-color: #fff;
+}
+#instagram #sb_instagram #sbi_load {
+  display: none;
+}
+#instagram #sb_instagram .sb_instagram_header, .sb_instagram_header {
+  display: none;
 }
 
 #blog{
@@ -598,13 +601,13 @@ nav ul li a:before {
   padding-bottom: .5em;
   text-transform: uppercase;
 }
-#blog .btn_blue{
+#blog .btn_default{
   margin-top: 2.5em;
   color: #060077;
   background-color: #fff;
   border-color: #fff;
 }
-#blog .btn_blue:hover{
+#blog .btn_default:hover{
   color: #fff;
   background-color: #060077;
   border-color: #fff;
@@ -1100,72 +1103,16 @@ nav ul li a:before {
 }
 
 #contato{
-  background: #fff;
+  background: #FCF1D1;
   padding: 3em 0;
 }
 #contato h2{
-  color: #060077;
-  font-size: 55px;
+  color: #B18846;
+  font-size: 80px;
   font-family: 'Bitter', serif;
-  font-weight: 700;
+  font-weight: 800;
   text-align: center;
-  padding-bottom: .5em;
-  text-transform: uppercase;
-}
-
-#nossos-profissionais{
-  background-color: #fff;
-  margin-top: 10em;
-}
-#nossos-profissionais h2{
-  color: #ea4a6c;
-  font-size: 55px;
-  line-height: 1;
-  padding-bottom: 1em;
-  text-align: center;
-}
-#nossos-profissionais h3{
-  color: #1d1d1b;
-  font-size: 30px;
-  text-align: center;
-}
-#nossos-profissionais hr {
-  display: inline-block;
-  width: 100%;
-  border-top: 1px solid #e5e5e5;
-}
-#nossos-profissionais .card{
-  background-color: transparent;
-  border: none;
-  margin-top: 3em;
-}
-#nossos-profissionais .card img{
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: center center;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-}
-#nossos-profissionais .card .card-body h3{
-  color: #1d1d1b;
-  font-size: 20px;
-  text-align: center;
-}
-#nossos-profissionais .card .card-body p{
-  color: #1d1d1b;
-  font-size: 16px;
-  line-height: 1.2;
-  text-align: center;
-}
-#nossos-profissionais .card .card-body p strong{
-  font-weight: 700;
-}
-#nossos-profissionais .btn_white{
-  padding: 8px 0;
-  margin: 1em 0;
+  padding-bottom: .2em;
 }
 
 .input-group-lg > .form-control,
@@ -1174,13 +1121,10 @@ nav ul li a:before {
   font-size: 14px;
 }
 .form-control {
-  background-color: #fff;
+  background-color: transparent;
   color: #000;
   height: 45px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px;
-  border-color: #1d1d1b;
+  border-color: #1D1D1B;
   font-family: 'Bitter', serif;
   font-weight: 400;
 }
@@ -1231,20 +1175,21 @@ form label {
 }
 
 footer{
-  background-color: #CECECE;
+  background-color: #000000;
   text-align: center;
 }
 footer .container{
   padding: 2em 0;
 }
 footer p.end{
+  color: #FCF1D1;
   font-family: 'Bitter', serif;
   font-weight: 400;
   margin-top: 1em;
   margin-bottom: 0;
 }
 footer .styled-icons a {
-  color: #060077;
+  color: #FCF1D1;
   font-size: 40px;
   height: 40px;
   line-height: 40px;
@@ -1257,15 +1202,17 @@ footer .styled-icons a {
   transition: all 0.3s ease-in-out;
 }
 footer .styled-icons a:hover {
-  color: #000;
+  color: #fff;
 }
 footer .styled-icons li {
   display: inline-block;
   margin-bottom: 0;
   margin-top: 0;
 }
-footer .btn__orange{
-  padding: 8px 0;
+footer .btn_default:hover{
+  color: #000;
+  background-color: #fff;
+  border: 2px solid #fff;
 }
 
 .footer-bottom{
@@ -1308,49 +1255,46 @@ footer .btn__orange{
 }
 
 /* BUTTONS */
-.btn_blue {
-  color: #fff;
-  background-color: #060077;
-  border: 2px solid #060077;
+.btn_default {
+  color: #000000;
+  background-color: #B18846;
+  border: 2px solid #B18846;
   font-size: 18px;
   font-family: 'Bitter', serif;
-  font-weight: 400;
+  font-weight: 800;
   text-transform: uppercase;
   padding: 8px 90px;
   margin-top: 1em;
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  border-radius: 50px;
 }
-.btn_blue:focus,
-.btn_blue.focus {
-  color: #060077;
-  background-color: transparent;
-  border: 2px solid #060077;
+.btn_default:focus,
+.btn_default.focus {
+  color: #B18846;
+  background-color: #000000;
+  border: 2px solid #000000;
 }
-.btn_blue:hover {
-  color: #060077;
-  background-color: transparent;
-  border: 2px solid #060077;
+.btn_default:hover {
+  color: #B18846;
+  background-color: #000000;
+  border: 2px solid #000000;
 }
-.btn_blue:active,
-.btn_blue.active {
-  color: #060077;
-  background-color: transparent;
-  border: 2px solid #060077;
+.btn_default:active,
+.btn_default.active {
+  color: #B18846;
+  background-color: #000000;
+  border: 2px solid #000000;
 }
-.btn_blue:active:hover,
-.btn_blue.active:hover,
-.btn_blue:active:focus,
-.btn_blue.active:focus,
-.btn_blue:active.focus,
-.btn_blue.active.focus {
-  color: #060077;
-  background-color: transparent;
-  border: 2px solid #060077;
+.btn_default:active:hover,
+.btn_default.active:hover,
+.btn_default:active:focus,
+.btn_default.active:focus,
+.btn_default:active.focus,
+.btn_default.active.focus {
+  color: #B18846;
+  background-color: #000000;
+  border: 2px solid #000000;
 }
 
 /* WHATSAPP BUTTON */
